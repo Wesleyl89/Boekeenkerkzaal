@@ -29,6 +29,7 @@
 		<div class="sidebar">
 			<ul class="nav nav-list">
 				<li class="{{ Request::is( 'testing1') ? 'active' : '' }}"><a href="{{ URL::to('testing1') }}"><i class="fa fa-tachometer menu-icon"></i><span class="menu-text">test1</span></a></li>
+				<li class="{{ Request::is( 'church') ? 'active' : '' }}"><a href="{{ URL::to('church') }}"><i class="fa fa-calendar menu-icon"></i><span class="menu-text">test3</span></a></li>
 				<li class="{{ Request::is( 'subtest*') ? 'open active' : '' }}">
 					<a href="" class="dropdown-toggle"><i class="fa fa-laptop menu-icon"></i><span class="menu-text">test2</span><i class="fa fa-angle-double-down dropdown-icon"></i></a>
 					<ul class="submenu">
@@ -38,7 +39,6 @@
 						<li class="{{ Request::is( 'subtest4') ? 'active' : '' }}"><a href="{{ URL::to('subtest4') }}"><i class="fa fa-angle-right submenu-icon"></i></span><span>sub4</span></a></li>
 					</ul>
 				</li>
-				<li class="{{ Request::is( 'testing3') ? 'active' : '' }}"><a href="{{ URL::to('testing3') }}"><i class="fa fa-calendar menu-icon"></i><span class="menu-text">test3</span></a></li>
 				<li class="{{ Request::is( '1subtest*') ? 'open active' : '' }}">
 					<a href="" class="dropdown-toggle"><i class="fa fa-cogs menu-icon"></i><span class="menu-text">test4</span><i class="fa fa-angle-double-down dropdown-icon"></i></a>
 					<ul class="submenu">

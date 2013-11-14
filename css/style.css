@@ -30,7 +30,7 @@
 }
 
 .main-content {
-	padding: 20px;
+	padding: 40px 20px 20px 20px;
 	margin-left: 200px;
 }
 
@@ -264,13 +264,38 @@
 }
 
 .corner-button:hover>i {
-	-webkit-transform:rotate(-360deg);
-    -moz-transform:rotate(-360deg);
-    -o-transform:rotate(-360deg);    
-    -ms-transform:rotate(-360deg);
-    transform:rotate(-360deg);
+	-webkit-transform:rotate(360deg);
+    -moz-transform:rotate(360deg);
+    -o-transform:rotate(360deg);    
+    -ms-transform:rotate(360deg);
+    transform:rotate(360deg);
 }
 
+.info-panel {
+	background-color: #fff;
+	border: 1px solid #e3e3e3;
+	padding: 40px 40px 10px 10px;
+}
+
+.info-panel-label {
+	position: absolute;
+	top: -15px;
+	left: 40px;
+	font-size: 20px;
+	color: #0085C3;
+	padding: 2px 5px 2px 5px;
+	background-color: #fff;
+	border-left: 1px solid #e3e3e3;
+	border-right: 1px solid #e3e3e3;
+}
+
+.info-panel-label.blue, .info-panel.blue {
+	border-color: #0085C3;
+}
+
+.info-panel-label>p {
+	margin-bottom: 0px;
+}
 /*
 |---------------------|
 | Bootstrap overrides |
@@ -295,6 +320,15 @@
 .navbar-inverse {
 	background-color: #bb5555;
 	border-color: #bb5555;
+}
+
+.alert {
+	margin-bottom: 30px;
+}
+
+.alert-heading {
+	font-size: 16px;
+	font-weight: bold;
 }
 
 /*
