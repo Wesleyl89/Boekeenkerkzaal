@@ -282,7 +282,6 @@
 	top: -15px;
 	left: 40px;
 	font-size: 20px;
-	color: #0085C3;
 	padding: 2px 5px 2px 5px;
 	background-color: #fff;
 	border-left: 1px solid #e3e3e3;
@@ -293,9 +292,81 @@
 	border-color: #0085C3;
 }
 
+.info-panel-label.blue {
+	color: #0085C3;
+}
+
+.info-panel-label.orange, .info-panel.orange {
+	border-color: #F90;
+}
+
+.info-panel-label.orange {
+	color: #F90;
+}
+
 .info-panel-label>p {
 	margin-bottom: 0px;
 }
+
+.custom-checkbox {
+	width: 80px;
+	height: 25px;
+	background: #fff;
+	margin: 0px 20px;
+	border: 1px solid  #e3e3e3;
+	position: relative;
+	top: 5px;
+	z-index: 1;
+}
+
+.custom-checkbox:before {
+	content: 'JA';
+	color: #00e400;
+	position: absolute;
+	left: 12px;
+	top: 2px;
+	font-weight: bold;
+}
+
+.custom-checkbox:after {
+	content: 'NEE';
+	color: #c50000;
+	position: absolute;
+	left: 46px;
+	top: 2px;
+	font-weight: bold;
+	z-index: -1;
+}
+
+.custom-checkbox label {
+	display: block;
+	width: 40px;
+	height: 25px;
+	-webkit-transition: all .5s ease;
+	-moz-transition: all .5s ease;
+	-o-transition: all .5s ease;
+	-ms-transition: all .5s ease;
+	transition: all .5s ease;
+	cursor: pointer;
+	position: absolute;
+	left: 0px;
+	top: -1px;
+	border: 2px solid #000;
+	background: #fff;
+}
+
+.custom-checkbox.orange label {
+	border-color: #f90;
+}
+
+.custom-checkbox input[type=checkbox]:checked + label {
+	left: 40px;
+}
+
+input[type=checkbox] {
+	display: none;
+}
+
 /*
 |---------------------|
 | Bootstrap overrides |
@@ -330,6 +401,20 @@
 	font-size: 16px;
 	font-weight: bold;
 }
+
+.form-control {
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+
+textarea.form-control {
+	resize: vertical;
+}
+
 
 /*
 |---------------------|

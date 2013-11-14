@@ -23,6 +23,10 @@ $(document).ready(function() {
 			$(this).find('i.submenu-icon').animate({left:'10px'}, 'fast');
 		};
 	});
+
+	$('.alert').click(function (){
+		$(this).slideUp(1000);
+	});
 	
 });
 

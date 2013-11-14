@@ -16,7 +16,8 @@ Route::group(array('before' => 'auth'), function()
 	Route::get('/', 'HomeController@showWelcome');
 	Route::get('logout', 'LoginController@logout');
 	Route::get('church', 'ChurchController@index');
-	Route::post('church/{id}', array('as' => 'church', 'uses' => 'ChurchController@updateChurch'));
+	Route::post('church/updateChurch/{id}', 'ChurchController@updateChurch');
+	Route::post('church/updateServices/{id}', 'ChurchController@updateServices');
 
 	Route::get('testing1', 'HomeController@testing');
 	Route::get('testing2', 'HomeController@testing');

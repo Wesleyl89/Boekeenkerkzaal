@@ -18,4 +18,10 @@ class Church extends Eloquent {
 	{
 		return $this->belongsTo('user', 'user_id');
 	}
+
+	public function service()
+	{
+		return $this->hasOne('service', 'church_id');
+	}
+	
 }

@@ -20,20 +20,22 @@ class ChurchController extends BaseController {
 	{
 		$church 	= Church::find($id);
 
-		$churchname = Input::get('churchname');
-		$address	= Input::get('address');
-		$zipcode	= Input::get('zipcode');
-		$city		= Input::get('city');
-		$email		= Input::get('email');
-		$website	= Input::get('website');
+		$churchname 		= Input::get('churchname');
+		$church_description	= Input::get('church_description');
+		$address			= Input::get('address');
+		$zipcode			= Input::get('zipcode');
+		$city				= Input::get('city');
+		$email				= Input::get('email');
+		$website			= Input::get('website');
 
 		$input		= array(
-								'churchname' => $churchname,
-								'address'	 => $address,
-								'zipcode'	 => $zipcode,
-								'city'		 => $city,
-								'email'		 => $email,
-								'website'	 =>	$website
+								'churchname' 		 => $churchname,
+								'church_description' => $church_description,
+								'address'	 	     => $address,
+								'zipcode'	 	     => $zipcode,
+								'city'		 	     => $city,
+								'email'		 	     => $email,
+								'website'	 	     =>	$website
 						   );
 
 		$messages	= array(
@@ -48,13 +50,14 @@ class ChurchController extends BaseController {
 		$validation = Validator::make($input, $church->rules, $messages);
 
 		if(!$validation->fails()) {
-			$church -> churchname = $churchname;
-			$church -> address 	  = $address;
-			$church -> zipcode 	  = $zipcode;
-			$church -> city 	  = $city;
-			$church -> email 	  = $email;
-			$church -> website	  = $website;
-			$church -> updated_at = date('Y-m-d H:m:s');
+			$church -> churchname 		  = $churchname;
+			$church -> church_description = $church_description;
+			$church -> address 	  		  = $address;
+			$church -> zipcode 	  		  = $zipcode;
+			$church -> city 	  		  = $city;
+			$church -> email 	  		  = $email;
+			$church -> website	  		  = $website;
+			$church -> updated_at 		  = date('Y-m-d H:m:s');
 
 			$church->save();
 
@@ -63,6 +66,33 @@ class ChurchController extends BaseController {
 		} else {
 			return Redirect::to('church')->withErrors($validation);
 		}
+	}
+
+	public function updateServices($id)
+	{
+		$service 	= Service::where('church_id', '=', $id)->first();
+
+		$catering_license 	= Input::get('catering_license');
+		$catering 			= Input::get('catering');
+		$handicap_services 	= Input::get('handicap_services');
+		$parking		 	= Input::get('parking');
+		$wifi 				= Input::get('wifi');
+		$furniture_movable	= Input::get('furniture_movable');
+		$stage				= Input::get('stage');
+
+		$service-> catering_license	 = $catering_license;
+		$service-> catering 		 = $catering;
+		$service-> handicap_services = $handicap_services;
+		$service-> parking 		     = $parking;
+		$service-> wifi 		 	 = $wifi;
+		$service-> furniture_movable = $furniture_movable;
+		$service-> stage	 		 = $stage;
+		$service-> updated_at		 = date('Y-m-d H:m:s');
+
+		$service->save();
+
+		Session::flash('success', 'De voorzieningen zijn succesvol opgeslagen');
+		return Redirect::to('church');		
 	}
 
 }
