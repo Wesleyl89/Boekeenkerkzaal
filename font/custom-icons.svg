@@ -1,0 +1,12 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>Copyright (C) 2013 by original authors @ fontello.com</metadata>
+<defs>
+<font id="custom-icons" horiz-adv-x="1000" >
+<font-face font-family="custom-icons" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="church" unicode="&#xe800;" d="m544 795l0-96l106 0l0-73l-106 0l0-145l435-304l0-14l-58 0l0-256l-184 0l0 256l-236 169l-237-169l0-256l-184 0l0 256l-58 0l0 14l435 304l0 145l-106 0l0 73l106 0l0 96l87 0z m-150-879l0 169a111-97 0 0 1 213 0l0-169l-213 0z" horiz-adv-x="1000" />
+</font>
+</defs>
+</svg>

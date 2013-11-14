@@ -9,6 +9,7 @@
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
     {{ HTML::style('/css/style.css') }}
+    {{ HTML::style('/css/custom-icons.css') }}
     {{ HTML::script('/js/sidebar.js') }}
 
 </head>
@@ -28,10 +29,10 @@
 	<a href="" class="menu-toggler"><span class="menu-text"></span></a>
 		<div class="sidebar">
 			<ul class="nav nav-list">
-				<li class="{{ Request::is( 'testing1') ? 'active' : '' }}"><a href="{{ URL::to('testing1') }}"><i class="fa fa-tachometer menu-icon"></i><span class="menu-text">test1</span></a></li>
-				<li class="{{ Request::is( 'church') ? 'active' : '' }}"><a href="{{ URL::to('church') }}"><i class="fa fa-calendar menu-icon"></i><span class="menu-text">test3</span></a></li>
+				<li class="{{ Request::is( 'testing1') ? 'active' : '' }}"><a href="{{ URL::to('testing1') }}"><i class="fa fa-tachometer menu-icon"></i><span class="menu-text">Dashboard</span></a></li>
+				<li class="{{ Request::is( 'church') ? 'active' : '' }}"><a href="{{ URL::to('church') }}"><i class="fa icon-church menu-icon"></i><span class="menu-text">Kerkgegevens</span></a></li>
 				<li class="{{ Request::is( 'subtest*') ? 'open active' : '' }}">
-					<a href="" class="dropdown-toggle"><i class="fa fa-laptop menu-icon"></i><span class="menu-text">test2</span><i class="fa fa-angle-double-down dropdown-icon"></i></a>
+					<a href="" class="dropdown-toggle"><i class="fa fa-sitemap menu-icon"></i><span class="menu-text">Zalen</span><i class="fa fa-angle-double-down dropdown-icon"></i></a>
 					<ul class="submenu">
 						<li class="{{ Request::is( 'subtest1') ? 'active' : '' }}"><a href="{{ URL::to('subtest1') }}"><i class="fa fa-angle-right submenu-icon"></i></span><span>sub1</span></a></li>
 						<li class="{{ Request::is( 'subtest2') ? 'active' : '' }}"><a href="{{ URL::to('subtest2') }}"><i class="fa fa-angle-right submenu-icon"></i></span><span>sub2</span></a></li>

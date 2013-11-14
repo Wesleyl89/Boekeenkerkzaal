@@ -58,7 +58,7 @@
 			</div>
 
 			<div class="form-group">
-				<div class="col-md-3 col-md-offset-9"><button class="btn btn-primary pull-right">Opslaan</button></div>
+				<div class="col-md-3 col-md-offset-9"><button class="btn btn-primary pull-right"><i class="fa fa-floppy-o"></i> Opslaan</button></div>
 			</div>
 		{{ Form::close() }}
 	</div>
@@ -131,7 +131,7 @@
 		</div>
 
 		<div class="form-group">
-			<div class="col-md-3 col-md-offset-9"><button class="btn btn-danger pull-right">Opslaan</button></div>
+			<div class="col-md-3 col-md-offset-9"><button class="btn btn-danger pull-right"><i class="fa fa-floppy-o"></i> Opslaan</button></div>
 		</div>
 		{{ Form::close() }}
 	</div>
@@ -191,7 +191,7 @@
 		</div>
 
 		<div class="form-group">
-			<div class="col-md-3 col-md-offset-9"><button class="btn btn-warning pull-right">Opslaan</button></div>
+			<div class="col-md-3 col-md-offset-9"><button class="btn btn-warning pull-right"><i class="fa fa-floppy-o"></i> Opslaan</button></div>
 		</div>
 		{{ Form::close() }}
 	</div>

@@ -71,7 +71,7 @@ class AddRandomChurches extends Migration {
 	 */
 	public function down()
 	{
-		DB::table('churches')->where('churchname', '=', 'Kerk%')->delete();
+		DB::table('churches')->where('churchname', 'LIKE', 'Kerk%')->delete();
 	}
 
 }

@@ -63,7 +63,7 @@ class CreateRandomUsers extends Migration {
 	 */
 	public function down()
 	{
-		DB::table('users')->where('username', '=', 'user%')->delete();
+		DB::table('users')->where('username', 'LIKE', 'user%')->delete();
 	}
 
 }
