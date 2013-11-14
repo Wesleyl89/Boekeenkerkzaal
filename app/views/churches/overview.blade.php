@@ -62,6 +62,79 @@
 			</div>
 		{{ Form::close() }}
 	</div>
+
+	<div class="info-panel red">
+		<div class="info-panel-label red"><p><i class="fa fa-microphone"></i> Beeld & Geluid</p></div>	
+		{{ Form::open(array('action' => array('ChurchController@updateAttributes', $church->id), 'class' => 'form-horizontal', 'role' => 'form')) }}
+		<div class="form-group">
+			<label class="col-md-5 control-label">Microfoons</label>
+			<div class="col-md-7 custom-checkbox red">
+				<input type="checkbox" id="microphone" name="microphone" value="1" @if($church->attribute->microphone == 1) checked @endif  />
+				<label for="microphone"></label>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-md-5 control-label">Draadloze microfoons</label>
+			<div class="col-md-7 custom-checkbox red">
+				<input type="checkbox" id="wireless_mic" name="wireless_mic" value="1" @if($church->attribute->wireless_mic == 1) checked @endif  />
+				<label for="wireless_mic"></label>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-md-5 control-label">Ringleiding</label>
+			<div class="col-md-7 custom-checkbox red">
+				<input type="checkbox" id="audio_induction_loop" name="audio_induction_loop" value="1" @if($church->attribute->audio_induction_loop == 1) checked @endif  />
+				<label for="audio_induction_loop"></label>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-md-5 control-label">Opname mogelijkheid</label>
+			<div class="col-md-7 custom-checkbox red">
+				<input type="checkbox" id="recording" name="recording" value="1" @if($church->attribute->recording == 1) checked @endif  />
+				<label for="recording"></label>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-md-5 control-label">Mixers</label>
+			<div class="col-md-7 custom-checkbox red">
+				<input type="checkbox" id="mixers" name="mixers" value="1" @if($church->attribute->mixers == 1) checked @endif  />
+				<label for="mixers"></label>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-md-5 control-label">Beamers</label>
+			<div class="col-md-7 custom-checkbox red">
+				<input type="checkbox" id="beamers" name="beamers" value="1" @if($church->attribute->beamers == 1) checked @endif  />
+				<label for="beamers"></label>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-md-5 control-label">Schermen</label>
+			<div class="col-md-7 custom-checkbox red">
+				<input type="checkbox" id="screens" name="screens" value="1" @if($church->attribute->screens == 1) checked @endif  />
+				<label for="screens"></label>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-md-5 control-label">TV</label>
+			<div class="col-md-7 custom-checkbox red">
+				<input type="checkbox" id="tv" name="tv" value="1" @if($church->attribute->tv == 1) checked @endif  />
+				<label for="tv"></label>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-md-5 control-label">Print mogelijkheden</label>
+			<div class="col-md-7 custom-checkbox red">
+				<input type="checkbox" id="printing" name="printing" value="1" @if($church->attribute->printing == 1) checked @endif  />
+				<label for="printing"></label>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="col-md-3 col-md-offset-9"><button class="btn btn-danger pull-right">Opslaan</button></div>
+		</div>
+		{{ Form::close() }}
+	</div>
 </div>
 <div class="col-md-6">
 	<div class="info-panel orange">

@@ -272,9 +272,11 @@
 }
 
 .info-panel {
+	position: relative;
 	background-color: #fff;
 	border: 1px solid #e3e3e3;
 	padding: 40px 40px 10px 10px;
+	margin-bottom: 40px;
 }
 
 .info-panel-label {
@@ -304,9 +306,23 @@
 	color: #F90;
 }
 
+.info-panel-label.red, .info-panel.red {
+	border-color: #c00000;
+}
+
+.info-panel-label.red {
+	color: #c00000;
+}
+
 .info-panel-label>p {
 	margin-bottom: 0px;
 }
+
+/*
+|---------------------|
+| Checkbox 			  |
+|---------------------|
+*/
 
 .custom-checkbox {
 	width: 80px;
@@ -357,6 +373,10 @@
 
 .custom-checkbox.orange label {
 	border-color: #f90;
+}
+
+.custom-checkbox.red label {
+	border-color: #c00000;
 }
 
 .custom-checkbox input[type=checkbox]:checked + label {

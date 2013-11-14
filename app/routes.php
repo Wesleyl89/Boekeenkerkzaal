@@ -18,6 +18,7 @@ Route::group(array('before' => 'auth'), function()
 	Route::get('church', 'ChurchController@index');
 	Route::post('church/updateChurch/{id}', 'ChurchController@updateChurch');
 	Route::post('church/updateServices/{id}', 'ChurchController@updateServices');
+	Route::post('church/updateAttributes/{id}', 'ChurchController@updateAttributes');
 
 	Route::get('testing1', 'HomeController@testing');
 	Route::get('testing2', 'HomeController@testing');

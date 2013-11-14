@@ -95,4 +95,34 @@ class ChurchController extends BaseController {
 		return Redirect::to('church');		
 	}
 
+	public function updateAttributes($id)
+	{
+		$attribute 	= Attribute::where('church_id', '=', $id)->first();
+
+		$microphone		 	  = Input::get('microphone');
+		$wireless_mic		  = Input::get('wireless_mic');
+		$audio_induction_loop = Input::get('audio_induction_loop');
+		$recording		 	  = Input::get('recording');
+		$mixers				  = Input::get('mixers');
+		$beamers	 		  = Input::get('beamers');
+		$screens			  = Input::get('screens');
+		$tv					  = Input::get('tv');
+		$printing			  = Input::get('printing');
+
+		$attribute -> microphone		   = $microphone;
+		$attribute -> wireless_mic 		   = $wireless_mic;
+		$attribute -> audio_induction_loop = $audio_induction_loop;
+		$attribute -> recording	     	   = $recording;
+		$attribute -> mixers 		 	   = $mixers;
+		$attribute -> beamers			   = $beamers;
+		$attribute -> screens	 		   = $screens;
+		$attribute -> tv	 		 	   = $tv;
+		$attribute -> printing	 		   = $printing;
+		$attribute -> updated_at		   = date('Y-m-d H:m:s');
+
+		$attribute->save();
+
+		Session::flash('success', 'De beeld & geluid attributen zijn succesvol opgeslagen');
+		return Redirect::to('church');		
+	}
 }
