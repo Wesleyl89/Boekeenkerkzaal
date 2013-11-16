@@ -12,8 +12,10 @@ class ChurchController extends BaseController {
 	{
 		$user_id	= Auth::user()->id;
 		$church 	= Church::where('user_id', '=', $user_id)->first();
+		$rooms		= Room::where('church_id', '=', $church->id)->get();
 
-		return View::make('churches.overview')->with('church', $church);
+		return View::make('churches.overview')->with('church', $church)
+											  ->with('rooms', $rooms);
 	}
 
 	public function updateChurch($id)
@@ -28,24 +30,26 @@ class ChurchController extends BaseController {
 		$email				= Input::get('email');
 		$website			= Input::get('website');
 
-		$input		= array(
-								'churchname' 		 => $churchname,
-								'church_description' => $church_description,
-								'address'	 	     => $address,
-								'zipcode'	 	     => $zipcode,
-								'city'		 	     => $city,
-								'email'		 	     => $email,
-								'website'	 	     =>	$website
-						   );
+		$input		= array
+					(
+						'churchname' 		 => $churchname,
+						'church_description' => $church_description,
+						'address'	 	     => $address,
+						'zipcode'	 	     => $zipcode,
+						'city'		 	     => $city,
+						'email'		 	     => $email,
+						'website'	 	     =>	$website
+					);
 
-		$messages	= array(
-								'churchname.required' => 'De kerk naam moet inguvld zijn.',
-								'address.required' 	  => 'Het adres moet ingevuld zijn.',
-								'zipcode.required'    => 'De postcode moet ingevuld zijn.',
-								'zipcode.max'		  => 'De postcode mag maximaal maar 7 tekens bevatten. (Formaat: 1234 AB)',
-								'city.required' 	  => 'De plaats moet ingevuld zijn.',
-								'email.email'		  => 'Het email-adres is niet geldig.'
-						   );
+		$messages	= array
+					(
+						'churchname.required' => 'De kerk naam moet inguvld zijn.',
+						'address.required' 	  => 'Het adres moet ingevuld zijn.',
+						'zipcode.required'    => 'De postcode moet ingevuld zijn.',
+						'zipcode.max'		  => 'De postcode mag maximaal maar 7 tekens bevatten. (Formaat: 1234 AB)',
+						'city.required' 	  => 'De plaats moet ingevuld zijn.',
+						'email.email'		  => 'Het email-adres is niet geldig.'
+					);
 
 		$validation = Validator::make($input, $church->rules, $messages);
 

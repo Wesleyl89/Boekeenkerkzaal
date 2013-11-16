@@ -28,5 +28,10 @@ class Church extends Eloquent {
 	{
 		return $this->hasOne('attribute', 'church_id');
 	}
+
+	public function room()
+	{
+		return $this->hasMany('room', 'church_id');
+	}
 	
 }

@@ -8,8 +8,9 @@
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-    {{ HTML::style('/css/style.css') }}
     {{ HTML::style('/css/custom-icons.css') }}
+    {{ HTML::style('/css/jquery-ui/jquery-ui.min.css') }}
+    {{ HTML::style('/css/style.css') }}
     {{ HTML::script('/js/sidebar.js') }}
 
 </head>

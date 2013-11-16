@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function(e) {
 
 	$('.dropdown-toggle').click(function (e) {
 		e.preventDefault();
@@ -25,8 +25,33 @@ $(document).ready(function() {
 	});
 
 	$('.alert').click(function (){
-		$(this).slideUp(1000);
+		$(this).slideUp(600);
 	});
 	
+	$( '#slider-range' ).slider({
+		      range: true,
+		      min: 0,
+		      max: 2000,
+		      step: 10,
+		      values: [ 0, 750 ],
+      slide: function( event, ui ) {
+        $( "#min_amount" ).val(ui.values[0]);
+        $( "#p-min" ).text('€ '+ui.values[0]);
+        $( "#max_amount" ).val(ui.values[1]);
+        $( "#p-max" ).text('€ '+ui.values[1]);
+      }
+    });
+
+	$('.room-delete-button').click(function(e) {
+		e.preventDefault();
+		$('.confirm-dialog').css('display', 'none');
+		$(this).parent().find('.confirm-dialog').fadeIn('fast');
+	});
+
+	$('.cancel-delete').click(function(e) {
+		e.preventDefault();
+		$(this).parent().fadeOut('fast');
+	});
+
 });
 
