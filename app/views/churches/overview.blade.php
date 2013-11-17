@@ -4,14 +4,6 @@
 
 @section('content')
 
-@if(Session::has('success'))
-<div class="col-md-12">
-	<div class="alert alert-success metro-style">
-		{{ Session::get('success') }}
-	</div>
-</div>
-@endif
-
 @if($errors->has())
     <div class="col-md-12">
     	<div class="alert alert-danger metro-style">

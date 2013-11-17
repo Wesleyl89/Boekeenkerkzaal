@@ -4,6 +4,6 @@
 
 @section('content')
 
-Pagina niet gevonden
+Verboden toegang
 
 @stop

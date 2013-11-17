@@ -85,5 +85,10 @@ Route::filter('csrf', function()
 
 View::composer('*', function($view)
 {
-    $view->with('users', User::all());
+	if(Auth::check()) {
+		$church = Church::where('user_id', '=', Auth::user()->id)->first();
+		$rooms = Room::where('church_id', '=', $church->id)->get();
+	    $view->with('global_rooms', $rooms);
+	}
+
 });

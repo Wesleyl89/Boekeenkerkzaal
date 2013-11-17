@@ -8,6 +8,19 @@ class RoomController extends BaseController {
 	|--------------------------------------------------------------------------
 	*/
 
+	public function index($id)
+	{
+
+		$room = Room::find($id);
+
+		if(Auth::user()->id != $room->church->user_id) {
+			Session::flash('warning', 'U heeft niet genoeg bevoegdheid om deze zaal te bekijken');
+			return Redirect::to('/');
+		}
+
+		return View::make('rooms.overview')->with('room', $room);
+	}
+
 	public function showCreate()
 	{
 		return View::make('rooms.create');
@@ -46,6 +59,20 @@ class RoomController extends BaseController {
 		} else {
 			return Redirect::to('room/create')->withErrors($validation)->withInput();
 		}
+	}
+
+	public function delete($id)
+	{
+		$room = Room::find($id);
+
+		if(Auth::user()->id == $room->church->user_id) {
+			$room->delete();
+			Session::flash('success', 'De zaal is succesvol verwijderd.');
+			return Redirect::to('church');
+		} 
+
+		Session::flash('warning', 'U heeft niet genoeg bevoegdheid om deze zaal te verwijderen.');
+		return Redirect::to('church');
 	}
 
 }

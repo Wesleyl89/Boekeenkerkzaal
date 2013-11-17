@@ -4,6 +4,6 @@
 
 @section('content')
 
-Pagina niet gevonden
+Er lijkt hier iets niet te kloppen...
 
 @stop
