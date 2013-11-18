@@ -24,6 +24,19 @@ $(document).ready(function(e) {
 		};
 	});
 
+	$('.room-list>li').hover(function () {
+		$(this).find('i.room-list-icon').stop();
+		$(this).find('i.room-list-icon').css('display', 'block');
+		$(this).find('i.room-list-icon').animate({left:'-22px'}, 'fast');
+	}, function () {
+		$(this).find('i.room-list-icon').stop();
+		$(this).find('i.room-list-icon').css('display', 'none');
+
+		if( ($(this).find('i.room-list-icon').css('display')) != 'block') {
+			$(this).find('i.room-list-icon').animate({left:'-30px'}, 'fast');
+		};
+	});
+
 	$('.alert').click(function (){
 		$(this).slideUp(600);
 	});
@@ -33,7 +46,7 @@ $(document).ready(function(e) {
 		      min: 0,
 		      max: 2000,
 		      step: 10,
-		      values: [ 0, 750 ],
+		      values: [ $("#min_amount").val(), $("#max_amount").val() ],
       slide: function( event, ui ) {
         $( "#min_amount" ).val(ui.values[0]);
         $( "#p-min" ).text('€ '+ui.values[0]);

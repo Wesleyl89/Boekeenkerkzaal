@@ -25,6 +25,7 @@ Route::group(array('before' => 'auth'), function()
 	Route::post('room/store', 'RoomController@store');
 	Route::get('room/delete/{id}', 'RoomController@delete');
 	Route::get('room/{id}', 'RoomController@index');
+	Route::post('room/updateRoom/{id}', 'RoomController@updateRoom');
 
 	Route::get('testing1', 'HomeController@testing');
 	Route::get('testing2', 'HomeController@testing');

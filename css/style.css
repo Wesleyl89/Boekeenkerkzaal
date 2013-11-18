@@ -151,10 +151,9 @@
 	position: relative;
 }
 
-.nav-list>li .submenu>li>p {
-	margin-left: 20px;
-	margin-bottom: 0;
-	padding: 5px;
+.nav-list>li .submenu>li>a>p {
+	margin-bottom: 0px;
+	width: 90%;
 }
 
 .nav-list>li .submenu>li>p>i {
@@ -205,6 +204,14 @@
 	font-size: 20px;
 	left: 10px;
 	top: 7px;
+	display: none;
+}
+
+.room-list-icon {
+	position: absolute;
+	left: -30px;
+	top: 10px;
+	font-size: 30px;
 	display: none;
 }
 
@@ -667,4 +674,31 @@ textarea.form-control {
 		margin-left: 0;
 		margin-top: -5px;
 	}
+}
+
+/*
+|---------------------|
+| Print         	  |
+|---------------------|
+*/
+
+@media print {
+
+	.main-content {
+		padding: 40px 20px 20px 20px;
+		margin-left: 0px;
+	}
+
+	.sidebar {
+		display: none;
+	}
+
+	.info-panel {
+		border: none;
+	}
+
+	.info-panel-label {
+		border: none;
+	}
+	
 }

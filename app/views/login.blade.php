@@ -11,7 +11,7 @@
 				{{ Form::open(array('url' => 'login')) }}
 
 				@if (Session::has('login_error'))
-			        <div class="alert alert-danger">{{ Session::get('login_error') }}</div>
+			        <div class="alert alert-danger metro-style">{{ Session::get('login_error') }}</div>
 			    @endif
 			    <div class="input-group margin-bottom-5px">
 			    	<span class="input-group-addon input-icon metro-style"><span class="glyphicon glyphicon-user"></span></span>

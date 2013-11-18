@@ -33,5 +33,10 @@ class Church extends Eloquent {
 	{
 		return $this->hasMany('room', 'church_id');
 	}
+
+	public function customExpenditure()
+	{
+		return $this->hasMany('customExpenditure', 'church_id');
+	}
 	
 }

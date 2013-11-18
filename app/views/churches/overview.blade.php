@@ -4,51 +4,38 @@
 
 @section('content')
 
-@if($errors->has())
-    <div class="col-md-12">
-    	<div class="alert alert-danger metro-style">
-    		<p class="alert-heading">De volgende fouten zijn gevonden:</p>
-    		<ul>
-	            @foreach($errors->all() as $message)	
-	            <li>{{ $message }}</li>
-	            @endforeach
-	        </ul>
-    	</div>
-    </div>
-@endif
-
 @if($church != null) 
 <div class="col-md-6">
 	<div class="info-panel blue">
 		<div class="info-panel-label blue"><p><i class="fa fa-globe"></i> Algemeen</p></div>
 		{{ Form::open(array('action' => array('ChurchController@updateChurch', $church->id), 'class' => 'form-horizontal', 'role' => 'form')) }}
 			<div class="form-group">
-				<label for="churchname" class="control-label col-md-3">Kerk naam</label>
-				<div class="col-md-9"><input type="text" class="form-control" name="churchname" value="{{ $church->churchname }}" /></div>
+				<label for="churchname" class="control-label col-md-4">Kerk naam</label>
+				<div class="col-md-8"><input type="text" class="form-control" name="churchname" value="{{ $church->churchname }}" /></div>
 			</div>
 			<div class="form-group">
-				<label for="church_description" class="control-label col-md-3">Kerk beschrijving</label>
-				<div class="col-md-9"><textarea type="text" class="form-control" rows="4" name="church_description" value="{{ $church->church_description }}">{{ $church->church_description }}</textarea></div>
+				<label for="church_description" class="control-label col-md-4">Kerk beschrijving</label>
+				<div class="col-md-8"><textarea type="text" class="form-control" rows="4" name="church_description" value="{{ $church->church_description }}">{{ $church->church_description }}</textarea></div>
 			</div>
 			<div class="form-group">
-				<label for="address" class="control-label col-md-3">Adres</label>
-				<div class="col-md-9"><input type="text" class="form-control" name="address" value="{{ $church->address }}"></div>
+				<label for="address" class="control-label col-md-4">Adres</label>
+				<div class="col-md-8"><input type="text" class="form-control" name="address" value="{{ $church->address }}"></div>
 			</div>
 			<div class="form-group">
-				<label for="zipcode" class="control-label col-md-3">Postcode</label>
-				<div class="col-md-9"><input type="text" class="form-control" name="zipcode" value="{{ $church->zipcode }}"></div>
+				<label for="zipcode" class="control-label col-md-4">Postcode</label>
+				<div class="col-md-8"><input type="text" class="form-control" name="zipcode" value="{{ $church->zipcode }}"></div>
 			</div>
 			<div class="form-group">
-				<label for="city" class="control-label col-md-3">Plaats</label>
-				<div class="col-md-9"><input type="text" class="form-control" name="city" value="{{ $church->city }}"></div>
+				<label for="city" class="control-label col-md-4">Plaats</label>
+				<div class="col-md-8"><input type="text" class="form-control" name="city" value="{{ $church->city }}"></div>
 			</div>
 			<div class="form-group">
-				<label for="email" class="control-label col-md-3">Contact E-mail</label>
-				<div class="col-md-9"><input type="text" class="form-control" name="email" value="{{ $church->email }}"></div>
+				<label for="email" class="control-label col-md-4">Contact E-mail</label>
+				<div class="col-md-8"><input type="text" class="form-control" name="email" value="{{ $church->email }}"></div>
 			</div>
 			<div class="form-group">
-				<label for="website" class="control-label col-md-3">Website</label>
-				<div class="col-md-9"><input type="text" class="form-control" name="website" value="{{ $church->website }}"></div>
+				<label for="website" class="control-label col-md-4">Website</label>
+				<div class="col-md-8"><input type="text" class="form-control" name="website" value="{{ $church->website }}"></div>
 			</div>
 
 			<div class="form-group">
@@ -196,7 +183,7 @@
 			<ul class="room-list">
 			@foreach ($rooms as $room)
 				<li>
-					<a href="{{ URL::to('room/'.$room->id) }}"><i class="fa fa-angle-double-right"></i> {{ $room->roomname }}</a>
+					<a href="{{ URL::to('room/'.$room->id) }}"><i class="fa fa-angle-double-right room-list-icon"></i> {{ $room->roomname }}</a>
 					<a href="#" class="room-delete-button"><i class="fa fa-trash-o"></i></a>
 					<div class="confirm-dialog">
 						<p>Weet u zeker dat u "{{ $room->roomname }}" wilt verwijderen?</p>
